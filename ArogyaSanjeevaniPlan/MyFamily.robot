@@ -26,7 +26,7 @@ Jenkins browser launch
     
 Local browser launch
     # Set Selenium Speed    1s
-    Open Browser     ${Baseurl}    ${BROWSER}    None    http://10.100.20.147:4444/grid/console
+    Open Browser     ${Baseurl}    ${BROWSER}    None    http://10.100.20.147:4444/wd/hub
     Maximize Browser Window
     Set Browser Implicit Wait    15s
 Choose the Cover Type
