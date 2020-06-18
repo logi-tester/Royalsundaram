@@ -26,9 +26,10 @@ Jenkins browser launch
     
 Local browser launch
     # Set Selenium Speed    1s
-    Open Browser     ${Baseurl}    chrome    None	http://172.20.0.3:5555/wd/hub
+    Open Browser     ${Baseurl}    ${BROWSER}    None    http://10.100.20.147:4444/grid/console
     Maximize Browser Window
     Set Browser Implicit Wait    15s
+    
 Choose the Cover Type
     Click Element    xpath=.//div[@class='familyfloaterRadio coverageradio bigradiobutton']
     
