@@ -10,7 +10,6 @@ ${EmailID}    qcteam1@xerago.mail
 # ${EmailID}    testerrr4111@gmail.com
 ${Lastname}    Proposer Last name
 ${OTP}    123456
-${BROWSER}
 
 *** Keywords ***
 Jenkins browser launch
