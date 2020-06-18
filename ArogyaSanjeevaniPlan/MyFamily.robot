@@ -2873,6 +2873,7 @@ STP-Family Floater with 2 Adults with Self and Son
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
+    Close Browser  
         
 NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs and Medical Question as Yes
     [Documentation]    Medical Question is Yes
@@ -3019,6 +3020,7 @@ NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs and Medical Q
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
+    Close Browser  
             
 STP-Family Floater with 2 Adults and 1 Child
     # Jenkins browser launch
@@ -3199,6 +3201,7 @@ STP-Family Floater with 2 Adults and 1 Child
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
+    Close Browser  
        
 NSTP-Family Floater with 2 Adults and 1 Child with Cover all Child as No
     Local browser launch
