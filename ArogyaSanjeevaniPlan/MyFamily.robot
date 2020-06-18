@@ -10,6 +10,7 @@ ${EmailID}    qcteam1@xerago.mail
 # ${EmailID}    testerrr4111@gmail.com
 ${Lastname}    Proposer Last name
 ${OTP}    123456
+${BROWSER}
 
 *** Keywords ***
 Jenkins browser launch
@@ -29,7 +30,6 @@ Local browser launch
     Open Browser     ${Baseurl}    ${BROWSER}    None    http://10.100.20.147:4444/grid/console
     Maximize Browser Window
     Set Browser Implicit Wait    15s
-    
 Choose the Cover Type
     Click Element    xpath=.//div[@class='familyfloaterRadio coverageradio bigradiobutton']
     
@@ -222,7 +222,7 @@ Call Sleep
    
 *** Test Cases ***
 NSTP-Family Floater with 4 Adults and 6 Child with age above 51
-    # Local browser launch
+    Local browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -624,8 +624,8 @@ NSTP-Family Floater with 4 Adults and 6 Child with age above 51
     Close Browser
       
 NSTP-Family Floater with 4 Adults and 2 Child with Cover all Child as No, Age above 51 and Sum Insured above 2.5 Lakhs
-    # Local browser launch
-    Jenkins browser launch
+    Local browser launch
+    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -900,15 +900,13 @@ NSTP-Family Floater with 4 Adults and 2 Child with Cover all Child as No, Age ab
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    
-    
-   
+    Close Browser
     
     
 
 NSTP-Family Floater with 5 Adults and 5 Child with age above 51 and Sum Insured above 2.5 Lakhs
-    Jenkins browser launch
-    # Local browser launch
+    # Jenkins browser launch
+    Local browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -1318,8 +1316,8 @@ NSTP-Family Floater with 5 Adults and 5 Child with age above 51 and Sum Insured 
     Close Browser
     
 NSTP-Family Floater with 3 Adults and 4 Child with Medical Question as Yes and BMI above 33
-    Jenkins browser launch
-    # Local browser launch
+    # Jenkins browser launch
+    Local browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -1819,1589 +1817,1566 @@ NSTP-Family Floater with 2 Adults and 2 Child with age above 51
     Handle Payment Details
     Close Browser
     
-# NSTP-Family Floater with 5 Adults with age above 51
-    # # Local browser launch
+NSTP-Family Floater with 5 Adults with age above 51
+    Local browser launch
     # Jenkins browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1982    
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Fifth Adult
-    # Select Sum Insured for STP 2.5 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Father 
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1959      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the next button
-    # Select From List By Label    insurerDetails[2][relationshipWithProposer]    Mother 
-    # Input Text    id=prospername3    Insured Member Three 
-    # Click Element    xpath=.//input[@id='eldestdate3']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1962      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the next button
-    # Select From List By Label    insurerDetails[3][relationshipWithProposer]    Spouse 
-    # Input Text    id=prospername4    Insured Member Four 
-    # Click Element    xpath=.//input[@id='eldestdate4']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1983      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the next button
-    # Call Sleep
-    # Select From List By Label    xpath=.//select[@name='insurerDetails[4][relationshipWithProposer]']    Father in Law
-    # Input Text    id=prospername5    Insured Member Fifth
-    # Call Sleep
-    # Click Element    xpath=.//input[@id='eldestdate5']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1965      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1982    
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Proposer Mobile Number
+    Proposer email
+    Select Fifth Adult
+    Select Sum Insured for STP 2.5 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Father 
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1959      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the next button
+    Select From List By Label    insurerDetails[2][relationshipWithProposer]    Mother 
+    Input Text    id=prospername3    Insured Member Three 
+    Click Element    xpath=.//input[@id='eldestdate3']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1962      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the next button
+    Select From List By Label    insurerDetails[3][relationshipWithProposer]    Spouse 
+    Input Text    id=prospername4    Insured Member Four 
+    Click Element    xpath=.//input[@id='eldestdate4']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1983      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the next button
+    Call Sleep
+    Select From List By Label    xpath=.//select[@name='insurerDetails[4][relationshipWithProposer]']    Father in Law
+    Input Text    id=prospername5    Insured Member Fifth
+    Call Sleep
+    Click Element    xpath=.//input[@id='eldestdate5']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1965      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
     
-    # Get Quote ID
-    # Click contact details button
-    # Input Text    id=lastName    Michel
-    # Click contact details button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
+    Get Quote ID
+    Click contact details button
+    Input Text    id=lastName    Michel
+    Click contact details button
+    Call Sleep
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
     
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']    60 
-    # Click MEDICAL QUESTIONS button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName2']    adult two lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale2'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName2']    adult two lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale2'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName3']    adult Three lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgenderfemale3'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height3']    150
-    # Input Text    xpath=.//input[@name='weight3']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName3']    adult Three lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgenderfemale3'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height3']    150
+    Input Text    xpath=.//input[@name='weight3']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName4']    adult Four lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgenderfemale4'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height4']    150
-    # Input Text    xpath=.//input[@name='weight4']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName4']    adult Four lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgenderfemale4'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height4']    150
+    Input Text    xpath=.//input[@name='weight4']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName5']    adult Fifth lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale5'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height5']    150
-    # Input Text    xpath=.//input[@name='weight5']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName5']    adult Fifth lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale5'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height5']    150
+    Input Text    xpath=.//input[@name='weight5']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno3']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno3']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno4']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno4']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno5']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno5']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno3']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno3']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno4']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno4']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno5']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno5']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno5']
+    Click GENERAL INFORMATION button
     
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
-    # Close Browser
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
+    Close Browser
       
-# STP-Family Floater with 4 Adults
-    # # Local browser launch
+STP-Family Floater with 4 Adults
+    Local browser launch
     # Jenkins browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1993
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Fourth Adult
-    # Select Sum Insured for STP 1 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Father 
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1975      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the next button
-    # Select From List By Label    insurerDetails[2][relationshipWithProposer]    Spouse 
-    # Input Text    id=prospername3    Insured Member Three 
-    # Click Element    xpath=.//input[@id='eldestdate3']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the next button
-    # Select From List By Label    insurerDetails[3][relationshipWithProposer]    Son 
-    # Input Text    id=prospername4    Insured Member Four 
-    # Click Element    xpath=.//input[@id='eldestdate4']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    2002      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1993
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Proposer Mobile Number
+    Proposer email
+    Select Fourth Adult
+    Select Sum Insured for STP 1 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Father 
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1975      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the next button
+    Select From List By Label    insurerDetails[2][relationshipWithProposer]    Spouse 
+    Input Text    id=prospername3    Insured Member Three 
+    Click Element    xpath=.//input[@id='eldestdate3']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the next button
+    Select From List By Label    insurerDetails[3][relationshipWithProposer]    Son 
+    Input Text    id=prospername4    Insured Member Four 
+    Click Element    xpath=.//input[@id='eldestdate4']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    2002      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
     
-    # Get Quote ID
-    # Click contact details button
-    # Input Text    id=lastName    Michel
-    # Click contact details button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
+    Get Quote ID
+    Click contact details button
+    Input Text    id=lastName    Michel
+    Click contact details button
+    Call Sleep
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
     
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']    60 
-    # Click MEDICAL QUESTIONS button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName2']    adult two lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale2'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName2']    adult two lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale2'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName3']    adult threee lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgenderfemale3'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height3']    150
-    # Input Text    xpath=.//input[@name='weight3']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName3']    adult threee lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgenderfemale3'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height3']    150
+    Input Text    xpath=.//input[@name='weight3']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName4']    adult Four lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale4'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height4']    150
-    # Input Text    xpath=.//input[@name='weight4']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName4']    adult Four lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale4'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height4']    150
+    Input Text    xpath=.//input[@name='weight4']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno3']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno3']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno4']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno4']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno3']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno3']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno4']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno4']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno4']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno4']
+    Click GENERAL INFORMATION button
     
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
-    # Close Browser
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
+    Close Browser
     
       
-# STP-Family Floater with 3 Adults
+STP-Family Floater with 3 Adults
     # Jenkins browser launch
-    # # Local browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1952
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Third Adult
-    # Select Sum Insured for STP 2 lakh
-    # Click the Continue button
-    # Select From List By Label    xpath=.//div[@class='form-group citynameicn']//select[@id='relationShipProposer1']    Spouse
-    # Input Text    id=prospername1    Maya
-    # Call Sleep
-    # Click Element    xpath=.//input[@id='eldestdate1']
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1975
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the next button
-    # Select From List By Label    xpath=.//div[@class='form-group citynameicn']//select[@id='relationShipProposer2']    Son
-    # Input Text    id=prospername2    Kim
-    # Call Sleep
-    # Click Element    xpath=.//input[@id='eldestdate2']
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1999
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
-    # Click the next button
-    # Select From List By Label    xpath=.//div[@class='form-group citynameicn']//select[@id='relationShipProposer3']    Daughter
-    # Input Text    id=prospername3    Niya
-    # Call Sleep
-    # Click Element    xpath=.//input[@id='eldestdate3']
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    2002
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
-    # Get Quote ID
-    # Click contact details button
-    # Input Text    id=lastName    Michel
-    # Click contact details button
-    # Sleep    2s    
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
+    Local browser launch
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1952
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Proposer Mobile Number
+    Proposer email
+    Select Third Adult
+    Select Sum Insured for STP 2 lakh
+    Click the Continue button
+    Select From List By Label    xpath=.//div[@class='form-group citynameicn']//select[@id='relationShipProposer1']    Spouse
+    Input Text    id=prospername1    Maya
+    Call Sleep
+    Click Element    xpath=.//input[@id='eldestdate1']
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1975
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the next button
+    Select From List By Label    xpath=.//div[@class='form-group citynameicn']//select[@id='relationShipProposer2']    Son
+    Input Text    id=prospername2    Kim
+    Call Sleep
+    Click Element    xpath=.//input[@id='eldestdate2']
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1999
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
+    Click the next button
+    Select From List By Label    xpath=.//div[@class='form-group citynameicn']//select[@id='relationShipProposer3']    Daughter
+    Input Text    id=prospername3    Niya
+    Call Sleep
+    Click Element    xpath=.//input[@id='eldestdate3']
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    2002
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
+    Get Quote ID
+    Click contact details button
+    Input Text    id=lastName    Michel
+    Click contact details button
+    Sleep    2s    
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
      
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName1']    adult one lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgenderfemale'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName1']    adult one lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgenderfemale'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName2']    adult two lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale2'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName2']    adult two lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale2'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
     
 
      
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='insuredLastName3']    adult threee lastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgenderfemale3'] 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height3']    150
-    # Input Text    xpath=.//input[@name='weight3']    60 
-    # Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='insuredLastName3']    adult threee lastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgenderfemale3'] 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height3']    150
+    Input Text    xpath=.//input[@name='weight3']    60 
+    Click MEDICAL QUESTIONS button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='consultedDoctorno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='undergoneinvestno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='omtreatno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tmdregularno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='mcnotseendocno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='sufferedno3']
-    # Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='consultedDoctorno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='undergoneinvestno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='omtreatno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tmdregularno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='mcnotseendocno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='sufferedno3']
+    Click ADDITIONAL MEDICAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno2']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
     
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='alcoholno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='smokingno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='tgpno3']
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='narcoticsno3']
-    # Click GENERAL INFORMATION button
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno3']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno3']
+    Click GENERAL INFORMATION button
     
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Call Sleep
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
-    # Close Browser
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Call Sleep
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
+    Close Browser
     
-# STP-Family Floater with 2 Adults
-    # [Documentation]    Sum Insured 2 lakhs
+STP-Family Floater with 2 Adults
+    [Documentation]    Sum Insured 2 lakhs
     # Jenkins browser launch
-    # # Local browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1993
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Second Adult
-    # Select Sum Insured for STP 2 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Spouse 
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
-    # Get Quote ID
-    # Click contact details button
-    # Input Text    id=lastName    Michel
-    # Click contact details button
-    # Sleep    2s    
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']    60 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    name=insuredLastName2    Insured last name
-    # Click MEDICAL QUESTIONS button
-    # Click Element    xpath=.//*[@for='insuredgenderfemale2']
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
-    # Close Browser
+    Local browser launch
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1993
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')]
+    Proposer Mobile Number
+    Proposer email
+    Select Second Adult
+    Select Sum Insured for STP 2 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Spouse 
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
+    Get Quote ID
+    Click contact details button
+    Input Text    id=lastName    Michel
+    Click contact details button
+    Sleep    2s    
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']    60 
+    Click MEDICAL QUESTIONS button
+    Input Text    name=insuredLastName2    Insured last name
+    Click MEDICAL QUESTIONS button
+    Click Element    xpath=.//*[@for='insuredgenderfemale2']
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
+    Close Browser
     
          
-# NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs
-    # [Documentation]    Sum Insured 3 lakhs
-    # # Local browser launch
+NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs
+    [Documentation]    Sum Insured 3 lakhs
+    Local browser launch
     # Jenkins browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1993
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Second Adult
-    # Select Sum Insured for STP 3 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Spouse 
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
-    # Get Quote ID
-    # Click contact details button
-    # Input Text    id=lastName    Michel
-    # Click contact details button
-    # Sleep    2s    
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']     60
-    # Click MEDICAL QUESTIONS button
-    # Input Text    name=insuredLastName2    Insured last name
-    # Click MEDICAL QUESTIONS button
-    # Click Element    xpath=.//*[@for='insuredgenderfemale2']
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    61
-    # Click MEDICAL QUESTIONS button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
-    # Close Browser
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1993
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
+    Proposer Mobile Number
+    Proposer email
+    Select Second Adult
+    Select Sum Insured for STP 3 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Spouse 
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
+    Get Quote ID
+    Click contact details button
+    Input Text    id=lastName    Michel
+    Click contact details button
+    Sleep    2s    
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']     60
+    Click MEDICAL QUESTIONS button
+    Input Text    name=insuredLastName2    Insured last name
+    Click MEDICAL QUESTIONS button
+    Click Element    xpath=.//*[@for='insuredgenderfemale2']
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    61
+    Click MEDICAL QUESTIONS button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
+    Close Browser
        
-# STP-Family Floater with 2 Adults with Self and Son
-    # [Documentation]    Proposer Age-36
-    # # Local browser launch
+STP-Family Floater with 2 Adults with Self and Son
+    [Documentation]    Proposer Age-36
+    Local browser launch
     # Jenkins browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1984
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Second Adult
-    # Select Sum Insured for STP 2 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Son 
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    2001      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
-    # Get Quote ID
-    # Click contact details button
-    # Input Text    id=lastName    Michel
-    # Click contact details button
-    # Sleep    2s    
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']     60
-    # Sleep    10s    
-    # Click MEDICAL QUESTIONS button
-    # Input Text    name=insuredLastName2    Insured last name
-    # Click MEDICAL QUESTIONS button
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//*[@for='insuredgendermale2']
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1984
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
+    Proposer Mobile Number
+    Proposer email
+    Select Second Adult
+    Select Sum Insured for STP 2 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Son 
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    2001      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
+    Get Quote ID
+    Click contact details button
+    Input Text    id=lastName    Michel
+    Click contact details button
+    Sleep    2s    
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']     60
+    Sleep    10s    
+    Click MEDICAL QUESTIONS button
+    Input Text    name=insuredLastName2    Insured last name
+    Click MEDICAL QUESTIONS button
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//*[@for='insuredgendermale2']
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
         
-# NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs and Medical Question as Yes
-    # [Documentation]    Medical Question is Yes
-    # # Local browser launch
+NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs and Medical Question as Yes
+    [Documentation]    Medical Question is Yes
+    Local browser launch
     # Jenkins browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1984
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Second Adult
-    # Select Sum Insured for STP 2 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Daughter 
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    2001      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
-    # Get Quote ID
-    # Click contact details button
-    # Input Text    id=lastName    Michel
-    # Click contact details button
-    # Sleep    2s    
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']     60
-    # Sleep    10s    
-    # Click MEDICAL QUESTIONS button
-    # Input Text    name=insuredLastName2    Insured last name
-    # Click MEDICAL QUESTIONS button
-    # Sleep    5s    
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//*[@for='insuredgenderfemale2']
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctoryes']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight) 
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Medical yes
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1984
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
+    Proposer Mobile Number
+    Proposer email
+    Select Second Adult
+    Select Sum Insured for STP 2 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Daughter 
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    2001      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
+    Get Quote ID
+    Click contact details button
+    Input Text    id=lastName    Michel
+    Click contact details button
+    Sleep    2s    
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']     60
+    Sleep    10s    
+    Click MEDICAL QUESTIONS button
+    Input Text    name=insuredLastName2    Insured last name
+    Click MEDICAL QUESTIONS button
+    Sleep    5s    
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//*[@for='insuredgenderfemale2']
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctoryes']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight) 
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Medical yes
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
             
-# STP-Family Floater with 2 Adults and 1 Child
+STP-Family Floater with 2 Adults and 1 Child
     # Jenkins browser launch
-    # # Local browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1991
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Second Adult
-    # Call Sleep
-    # Select First child
-    # Select Sum Insured for STP 2 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Father 
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1979    
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
-    # Click the next button
-    # Sleep    5s 
-    # Select From List By Label    insurerDetails[2][relationshipWithProposer]    Son 
-    # Input Text    id=prospername3    Insured Member Three  
-    # Click Element    xpath=.//input[@id='eldestdate3']   
-    # Select From List By Label    xpath=.//select[@class='ui-datepicker-month']    Jan    
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
-    # Get Quote ID
-    # Click contact details button
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='coveredAllChildYes'] 
-    # Click contact details button
-    # Input Text    id=lastName    Proposer Lastname
-    # Click contact details button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']    60 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    name=insuredLastName2    Insured last name
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale2']
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='insuredLastName3']    InsuredThreeLastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale3'] 
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='height3']    150
-    # Input Text    xpath=.//input[@name='weight3']    60 
-    # Click MEDICAL QUESTIONS button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno3']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
+    Local browser launch
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1991
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
+    Proposer Mobile Number
+    Proposer email
+    Select Second Adult
+    Call Sleep
+    Select First child
+    Select Sum Insured for STP 2 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Father 
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1979    
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
+    Click the next button
+    Sleep    5s 
+    Select From List By Label    insurerDetails[2][relationshipWithProposer]    Son 
+    Input Text    id=prospername3    Insured Member Three  
+    Click Element    xpath=.//input[@id='eldestdate3']   
+    Select From List By Label    xpath=.//select[@class='ui-datepicker-month']    Jan    
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
+    Get Quote ID
+    Click contact details button
+    Call Sleep
+    Click Element    xpath=.//label[@for='coveredAllChildYes'] 
+    Click contact details button
+    Input Text    id=lastName    Proposer Lastname
+    Click contact details button
+    Call Sleep
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']    60 
+    Click MEDICAL QUESTIONS button
+    Input Text    name=insuredLastName2    Insured last name
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale2']
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='insuredLastName3']    InsuredThreeLastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale3'] 
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='height3']    150
+    Input Text    xpath=.//input[@name='weight3']    60 
+    Click MEDICAL QUESTIONS button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno3']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
        
-# NSTP-Family Floater with 2 Adults and 1 Child with Cover all Child as No
-    # # Local browser launch
+NSTP-Family Floater with 2 Adults and 1 Child with Cover all Child as No
+    Local browser launch
     # Jenkins browser launch
-    # Choose the Cover Type
-    # Name of Proposer
-    # Proposer DOB
-    # Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1991
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
-    # Proposer Mobile Number
-    # Proposer email
-    # Select Second Adult
-    # Select First child
-    # Select Sum Insured for STP 2 lakh
-    # Click the Continue button
-    # Click the next button
-    # Select From List By Label    insurerDetails[1][relationshipWithProposer]    Mother
-    # Input Text    id=prospername2    Insured Member Two  
-    # Click Element    xpath=.//input[@id='eldestdate2']   
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1979    
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
-    # Click the next button
-    # Sleep    5s 
-    # Select From List By Label    insurerDetails[2][relationshipWithProposer]    Son 
-    # Input Text    id=prospername3    Insured Member Three  
-    # Click Element    xpath=.//input[@id='eldestdate3']   
-    # Select From List By Label    xpath=.//select[@class='ui-datepicker-month']    Jan    
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
-    # Click the Premium detail button
-    # Click the proceed button in Premium Details Page
-    # Click the Proceed button in model pop
-    # Get Quote ID
-    # Click contact details button
-    # Call Sleep
-    # Click Element    xpath=.//label[@for='coveredAllChildNo'] 
-    # Click contact details button
-    # Input Text    id=lastName    Proposer Lastname
-    # Click contact details button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='proposergendermale']          
-    # Click contact details button
-    # Input Text      id=panNo    EXXPS8896F
-    # Click contact details button
-    # Click Insured details button
-    # Input Text    id=address1    ADDRESS 1
-    # Click Insured details button
-    # Input Text    id=address2    ADDRESS 2
-    # Click Insured details button
-    # Input Text    xpath=.//input[@id='contactCity']    CHENNAI
-    # Click Insured details button
-    # Click Insured details button
-    # Input Text    id=pinCode    600045 
-    # Click Insured details button
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height1']    150
-    # Input Text    xpath=.//input[@name='weight1']    60 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    name=insuredLastName2    Insured last name
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgenderfemale2']
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='height2']    150
-    # Input Text    xpath=.//input[@name='weight2']    60 
-    # Click MEDICAL QUESTIONS button
-    # Input Text    xpath=.//input[@name='insuredLastName3']    InsuredThreeLastname
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Click Element    xpath=.//*[@for='insuredgendermale3'] 
-    # Click MEDICAL QUESTIONS button
-    # Call Sleep
-    # Input Text    xpath=.//input[@name='height3']    150
-    # Input Text    xpath=.//input[@name='weight3']    60 
-    # Click MEDICAL QUESTIONS button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno2']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='consultedDoctorno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='undergoneinvestno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='omtreatno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tmdregularno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='mcnotseendocno3']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='sufferedno3']
-    # Click ADDITIONAL MEDICAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno']
-    # Click GENERAL INFORMATION button
-    # Sleep    3s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='alcoholno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='smokingno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='tgpno2']
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Click Element    xpath=.//label[@for='narcoticsno2']
-    # Click GENERAL INFORMATION button
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Select From List By Label    relationWithProposer    Brother
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeFirstName    text  
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    # Input Text    name=nomineeLastName    text 
-    # Click PAYMENT DETAILS button
-    # Sleep    1s
-    # SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
-    # Click Element    xpath=.//input[@id='nomineeDob'] 
-    # Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
-    # Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
-    # Click PAYMENT DETAILS button
-    # Handle OTP Alert message
-    # Handle declaration and Terms and Condition
-    # Handle Payment Details
-    # Close Browser
-
-    
-
-    
-
-    
-
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-    
-    
-
+    Choose the Cover Type
+    Name of Proposer
+    Proposer DOB
+    Select From List By Value     xpath=.//select[@class='ui-datepicker-year']    1991
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
+    Proposer Mobile Number
+    Proposer email
+    Select Second Adult
+    Select First child
+    Select Sum Insured for STP 2 lakh
+    Click the Continue button
+    Click the next button
+    Select From List By Label    insurerDetails[1][relationshipWithProposer]    Mother
+    Input Text    id=prospername2    Insured Member Two  
+    Click Element    xpath=.//input[@id='eldestdate2']   
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1979    
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
+    Click the next button
+    Sleep    5s 
+    Select From List By Label    insurerDetails[2][relationshipWithProposer]    Son 
+    Input Text    id=prospername3    Insured Member Three  
+    Click Element    xpath=.//input[@id='eldestdate3']   
+    Select From List By Label    xpath=.//select[@class='ui-datepicker-month']    Jan    
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
+    Click the Premium detail button
+    Click the proceed button in Premium Details Page
+    Click the Proceed button in model pop
+    Get Quote ID
+    Click contact details button
+    Call Sleep
+    Click Element    xpath=.//label[@for='coveredAllChildNo'] 
+    Click contact details button
+    Input Text    id=lastName    Proposer Lastname
+    Click contact details button
+    Call Sleep
+    Click Element    xpath=.//*[@for='proposergendermale']          
+    Click contact details button
+    Input Text      id=panNo    EXXPS8896F
+    Click contact details button
+    Click Insured details button
+    Input Text    id=address1    ADDRESS 1
+    Click Insured details button
+    Input Text    id=address2    ADDRESS 2
+    Click Insured details button
+    Input Text    xpath=.//input[@id='contactCity']    CHENNAI
+    Click Insured details button
+    Click Insured details button
+    Input Text    id=pinCode    600045 
+    Click Insured details button
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height1']    150
+    Input Text    xpath=.//input[@name='weight1']    60 
+    Click MEDICAL QUESTIONS button
+    Input Text    name=insuredLastName2    Insured last name
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgenderfemale2']
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='height2']    150
+    Input Text    xpath=.//input[@name='weight2']    60 
+    Click MEDICAL QUESTIONS button
+    Input Text    xpath=.//input[@name='insuredLastName3']    InsuredThreeLastname
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Click Element    xpath=.//*[@for='insuredgendermale3'] 
+    Click MEDICAL QUESTIONS button
+    Call Sleep
+    Input Text    xpath=.//input[@name='height3']    150
+    Input Text    xpath=.//input[@name='weight3']    60 
+    Click MEDICAL QUESTIONS button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno2']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='consultedDoctorno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='undergoneinvestno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='omtreatno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tmdregularno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='mcnotseendocno3']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='sufferedno3']
+    Click ADDITIONAL MEDICAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno']
+    Click GENERAL INFORMATION button
+    Sleep    3s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='alcoholno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='smokingno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='tgpno2']
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Click Element    xpath=.//label[@for='narcoticsno2']
+    Click GENERAL INFORMATION button
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Select From List By Label    relationWithProposer    Brother
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeFirstName    text  
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Input Text    name=nomineeLastName    text 
+    Click PAYMENT DETAILS button
+    Sleep    1s
+    SeleniumLibrary.Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)  
+    Click Element    xpath=.//input[@id='nomineeDob'] 
+    Select From List By Value    xpath=.//select[@class='ui-datepicker-year']    1999      
+    Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')] 
+    Click PAYMENT DETAILS button
+    Handle OTP Alert message
+    Handle declaration and Terms and Condition
+    Handle Payment Details
+    Close Browser
