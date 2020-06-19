@@ -1,6 +1,7 @@
 *** Settings ***
+Test Teardown    Close Browser
 Library    SeleniumLibrary 
-
+           
 *** Variables ***
 ${Baseurl}    http://10.100.20.34:9190/web/guest/asquote
 # ${Baseurl}    https://www.royalsundaram.net/web/dtctest/asquote
@@ -10,6 +11,7 @@ ${EmailID}    qcteam1@xerago.mail
 # ${EmailID}    testerrr4111@gmail.com
 ${Lastname}    Proposer Last name
 ${OTP}    123456
+
 
 *** Keywords ***
 Jenkins browser launch
@@ -27,6 +29,7 @@ Jenkins browser launch
 Local browser launch
     # Set Selenium Speed    1s
     Open Browser     ${Baseurl}    ${BROWSER}    None    http://10.100.20.147:4444/wd/hub
+    # Open Browser    ${Baseurl}    chrome
     Maximize Browser Window
     Set Browser Implicit Wait    15s
 Choose the Cover Type
@@ -220,6 +223,7 @@ Call Sleep
          
    
 *** Test Cases ***
+
 NSTP-Family Floater with 4 Adults and 6 Child with age above 51
     Local browser launch
     Choose the Cover Type
@@ -620,7 +624,7 @@ NSTP-Family Floater with 4 Adults and 6 Child with age above 51
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
       
 NSTP-Family Floater with 4 Adults and 2 Child with Cover all Child as No, Age above 51 and Sum Insured above 2.5 Lakhs
     Local browser launch
@@ -632,6 +636,7 @@ NSTP-Family Floater with 4 Adults and 2 Child with Cover all Child as No, Age ab
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Fourth Adult
     Call Sleep
     Select Second child
@@ -881,6 +886,16 @@ NSTP-Family Floater with 4 Adults and 2 Child with Cover all Child as No, Age ab
     Click Element    xpath=.//label[@for='narcoticsno4']
     Click GENERAL INFORMATION button
     
+    Call Sleep
+    Click Element    xpath=.//label[@for='alcoholno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='smokingno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='tgpno5']
+    Call Sleep
+    Click Element    xpath=.//label[@for='narcoticsno5']
+    Click GENERAL INFORMATION button
+    
     Click PAYMENT DETAILS button
     Call Sleep
     Select From List By Label    relationWithProposer    Brother
@@ -899,12 +914,12 @@ NSTP-Family Floater with 4 Adults and 2 Child with Cover all Child as No, Age ab
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
     
     
 
 NSTP-Family Floater with 5 Adults and 5 Child with age above 51 and Sum Insured above 2.5 Lakhs
-    # Jenkins browser launch
+    
     Local browser launch
     Choose the Cover Type
     Name of Proposer
@@ -1312,10 +1327,10 @@ NSTP-Family Floater with 5 Adults and 5 Child with age above 51 and Sum Insured 
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
     
 NSTP-Family Floater with 3 Adults and 4 Child with Medical Question as Yes and BMI above 33
-    # Jenkins browser launch
+    
     Local browser launch
     Choose the Cover Type
     Name of Proposer
@@ -1324,6 +1339,7 @@ NSTP-Family Floater with 3 Adults and 4 Child with Medical Question as Yes and B
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Third Adult
     Call Sleep
     Select Fourth Child
@@ -1610,12 +1626,8 @@ NSTP-Family Floater with 3 Adults and 4 Child with Medical Question as Yes and B
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
-    
-   
 NSTP-Family Floater with 2 Adults and 2 Child with age above 51
     Local browser launch
-    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -1623,6 +1635,7 @@ NSTP-Family Floater with 2 Adults and 2 Child with age above 51
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Second Adult
     Call Sleep
     Select Second child
@@ -1814,11 +1827,9 @@ NSTP-Family Floater with 2 Adults and 2 Child with age above 51
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
     
 NSTP-Family Floater with 5 Adults with age above 51
     Local browser launch
-    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -1826,6 +1837,7 @@ NSTP-Family Floater with 5 Adults with age above 51
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Fifth Adult
     Select Sum Insured for STP 2.5 lakh
     Click the Continue button
@@ -2062,11 +2074,10 @@ NSTP-Family Floater with 5 Adults with age above 51
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
       
 STP-Family Floater with 4 Adults
     Local browser launch
-    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -2074,6 +2085,7 @@ STP-Family Floater with 4 Adults
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Fourth Adult
     Select Sum Insured for STP 1 lakh
     Click the Continue button
@@ -2267,11 +2279,10 @@ STP-Family Floater with 4 Adults
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
     
       
 STP-Family Floater with 3 Adults
-    # Jenkins browser launch
     Local browser launch
     Choose the Cover Type
     Name of Proposer
@@ -2280,6 +2291,7 @@ STP-Family Floater with 3 Adults
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'22')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Third Adult
     Select Sum Insured for STP 2 lakh
     Click the Continue button
@@ -2447,11 +2459,10 @@ STP-Family Floater with 3 Adults
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
     
 STP-Family Floater with 2 Adults
     [Documentation]    Sum Insured 2 lakhs
-    # Jenkins browser launch
     Local browser launch
     Choose the Cover Type
     Name of Proposer
@@ -2460,6 +2471,7 @@ STP-Family Floater with 2 Adults
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'25')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Second Adult
     Select Sum Insured for STP 2 lakh
     Click the Continue button
@@ -2588,13 +2600,12 @@ STP-Family Floater with 2 Adults
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
     
          
 NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs
     [Documentation]    Sum Insured 3 lakhs
     Local browser launch
-    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -2602,6 +2613,7 @@ NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Second Adult
     Select Sum Insured for STP 3 lakh
     Click the Continue button
@@ -2730,12 +2742,9 @@ NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
        
 STP-Family Floater with 2 Adults with Self and Son
-    [Documentation]    Proposer Age-36
     Local browser launch
-    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -2743,6 +2752,7 @@ STP-Family Floater with 2 Adults with Self and Son
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Second Adult
     Select Sum Insured for STP 2 lakh
     Click the Continue button
@@ -2873,12 +2883,11 @@ STP-Family Floater with 2 Adults with Self and Son
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser  
+      
         
 NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs and Medical Question as Yes
     [Documentation]    Medical Question is Yes
     Local browser launch
-    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -2886,6 +2895,7 @@ NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs and Medical Q
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'1')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Second Adult
     Select Sum Insured for STP 2 lakh
     Click the Continue button
@@ -3020,7 +3030,7 @@ NSTP-Family Floater with 2 Adults with Sum Insured above 2.5 Lakhs and Medical Q
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser  
+      
             
 STP-Family Floater with 2 Adults and 1 Child
     # Jenkins browser launch
@@ -3201,11 +3211,9 @@ STP-Family Floater with 2 Adults and 1 Child
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser  
        
 NSTP-Family Floater with 2 Adults and 1 Child with Cover all Child as No
     Local browser launch
-    # Jenkins browser launch
     Choose the Cover Type
     Name of Proposer
     Proposer DOB
@@ -3213,6 +3221,7 @@ NSTP-Family Floater with 2 Adults and 1 Child with Cover all Child as No
     Click Element    xpath=.//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[contains(.,'2')]
     Proposer Mobile Number
     Proposer email
+    Call Sleep
     Select Second Adult
     Select First child
     Select Sum Insured for STP 2 lakh
@@ -3381,4 +3390,4 @@ NSTP-Family Floater with 2 Adults and 1 Child with Cover all Child as No
     Handle OTP Alert message
     Handle declaration and Terms and Condition
     Handle Payment Details
-    Close Browser
+    
